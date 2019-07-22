@@ -1,0 +1,22 @@
+﻿@* Displays all parks with the image acting as a link which directs user to more detailed view of park. *@
+@model ParkViewModel
+
+@section Title {
+    Home
+}
+<partial name="_NavBar" />
+@foreach (Park park in Model.Parks)
+{
+    <div class="grid">
+        <div class="picture">
+            <a asp-controller="Home" asp-action="Detail" asp-route-id="@park.Code"><img src="~/img/parks/@park.ParkImg" /></a>
+        </div>
+        <div class="info">
+            <div id="ParkName">@park.ParkName</div>
+            <div id="StateName">@park.State</div>
+            <div id="ParkDescript">@park.ParkDescription</div>
+        </div>
+    </div>
+}
+
+

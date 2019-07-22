@@ -1,0 +1,75 @@
+﻿@model ParkViewModel
+
+@section Title {
+    Detail
+}
+
+<partial name="_NavBar" />
+
+<div class="detailGrid">
+    <img id="detailImg" src="~/img/parks/@Model.ParkImg" />
+    <div class="nameState">
+        <div id="ParkName">@Model.ParkName</div>
+        <div id="StateName">@Model.State</div>
+    </div>
+    <div class="info">
+        <div class="quote">"@Model.InspirationQuote"</div>
+        <div>- @Model.InspirationSource</div>
+        <br />
+        <div>@Model.ParkDescription</div>
+        <br />
+        <div>Acres: @Model.acreage.ToString("N0")</div>
+        <div>Elevation: @Model.elevationFt.ToString("N0") ft.</div>
+        <div>Miles of Trail: @Model.MilesOfTrail.ToString("N0")</div>
+        <div>Available Campsites: @Model.NumOfCampsites.ToString("N0")</div>
+        <div>Climate: @Model.Climate</div>
+        <div>Founded: @Model.YearFounded</div>
+        <div>Annual Visitors: @Model.AnnualVisitors.ToString("N0")</div>
+        <div>Entry Fee: @Model.EntryFee.ToString("C2")</div>
+        <div>Number of Animal Species: @Model.NumOfAnimals</div>
+    </div>
+</div>
+
+<h3 id="forecastheader">Five Day Weather Forecast</h3>
+<div class="weathergrid">
+    <div class="currentday">
+        <img src="~/img/weather/@Model.FiveDayForecast[0].WeatherImg" />
+        <div>@DateTime.Now.DayOfWeek.ToString()   </div>
+        <div>@Model.FiveDayForecast[0].Low @Model.TempSymbol </div>
+        <div>@Model.FiveDayForecast[0].High @Model.TempSymbol </div>
+        <div>@Model.FiveDayForecast[0].WeatherWarningForecast</div>
+        <div>@Model.FiveDayForecast[0].WeatherWarningTemp</div>
+
+    </div>
+
+    <div class="next4">
+        @for (int i = 1; i < 5; i++)
+        {
+            <div class="eachday">
+                <img src="~/img/weather/@Model.FiveDayForecast[i].WeatherImg" />
+                <div class="weatherinfo">
+                    <div>@DateTime.Now.AddDays(i).DayOfWeek.ToString() </div>
+                    <div>@Model.FiveDayForecast[i].Low @Model.TempSymbol </div>
+                    <div>@Model.FiveDayForecast[i].High @Model.TempSymbol </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<div id="convertbutton">
+    @if (Model.IsFarenheit)
+    {
+        <form class="convert" asp-controller="Home" asp-action="Convert" asp-route-id="@Model.Code" method="get">
+            <button class="btn">Convert To Celsius</button>
+        </form>
+    }
+    else
+    {
+        <form class="convert" asp-controller="Home" asp-action="Convert" asp-route-id="@Model.Code" method="get">
+            <button class="btn">Convert To Fahrenheit</button>
+        </form>
+    }
+</div>
+
+
+

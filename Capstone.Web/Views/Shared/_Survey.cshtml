@@ -1,0 +1,22 @@
+﻿@* Form for submitting a new survey.  If instance of user email exists in database, 
+   form will not display and user will be thanked for their participation instead *@
+@model SurveyViewModel
+
+@if (Model.SurveySubmitted == false)
+{
+    
+<form class="form-inline survey" asp-controller="Home" asp-action="Survey" method="post">
+    <h2 class="surveyheader">Vote On Your Favorite Park!</h2>
+    <label asp-for="ParkCode"></label>
+    <select id="selecttext" asp-for="ParkCode" asp-items="@Model.Parks"></select>
+    <label asp-for="State"></label>
+    <select id="selecttext" asp-for="State" asp-items="@Model.States"></select>
+    <label asp-for="ActivityLevel"></label>
+    <select id="selecttext" asp-for="ActivityLevel" asp-items="@Model.Levels"></select>
+    <button class="btn surv">Submit</button>
+</form>
+}
+else
+{
+<h2 class="surveyheader survey thanks">Thank You For Your Submission!</h2>
+}

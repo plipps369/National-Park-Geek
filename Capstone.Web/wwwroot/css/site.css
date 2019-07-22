@@ -1,0 +1,262 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
+for details on configuring this project to bundle and minify static web assets. */
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: white;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+header {
+    text-align: center;
+    margin-top: -20px;
+
+}
+header img {
+    border-radius: 30px;
+    width: 100vw;
+    height: auto;
+}
+.btn {
+    background-color: RGB(71, 79, 28);
+    color: RGB(209, 180, 140);
+}
+#user {
+    color: RGB(71, 79, 28);
+}
+#password {
+    color: RGB(71, 79, 28);
+}
+
+.registerAccount a {
+    color: RGB(106, 120, 35);
+    margin: 3px;
+}
+
+#mainBody {
+    margin-top: 20px;
+}
+nav {
+    width: auto;
+}
+.navbar {
+    background-color: RGB(71, 79, 28);
+}
+nav .nav .nav-item .nav-link {
+    color: RGB(209, 180, 140);
+}
+nav .navbar-header .navbar-brand {
+    color: RGB(209, 180, 140);
+}
+nav .nav .nav-item .nav-link #LogOut {
+    justify-content: flex-end;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: "picture info";
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    margin: 10px;
+    padding-right: 5px;
+    border: groove 2px brown;
+    background-color: RGB(209, 180, 140);
+    border-radius: 20px;
+    
+}
+
+.grid .picture img {
+    grid-area: picture;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+
+}
+.grid .info {
+    grid-area: info;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+#detailImg {
+    margin-top: -10px;
+    border-radius: 20px;
+    margin-left: 5px;
+    width: 30vw;
+    height: auto;
+}
+.grid .info #ParkName {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: RGB(71, 79, 28);
+    padding-top: 3px;
+}
+.grid .info #StateName {
+    text-align: center;
+    font-size: 20px;
+    color: RGB(71, 79, 28);
+    margin-bottom: 30px;
+}
+.grid .info {
+    color: RGB(71, 79, 28);
+}
+.grid .info #ParkDescript {
+    text-align: justify;
+    color: RGB(71, 79, 28);
+}
+.quote {
+    font-style:italic;
+}
+.detailGrid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: "top top" "picture info";
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    margin: 10px;
+    padding-right: 5px;
+    border: groove 2px brown;
+    background-color: RGB(209, 180, 140);
+    border-radius: 20px;
+}
+.detailGrid .nameState {
+    grid-area: top;
+    margin-bottom: -20px;
+}
+.detailGrid #ParkName {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: RGB(71, 79, 28);
+    padding-top: 3px;
+}
+.detailGrid #StateName {
+    text-align: center;
+    font-size: 20px;
+    color: RGB(71, 79, 28);
+    margin-bottom: 30px;
+}
+.detailGrid .info {
+    grid-area: info;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    color: RGB(71, 79, 28);
+}
+.weathergrid {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: "today forecast";
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    margin: 10px;
+    padding-right: 5px;
+    color: RGB(71, 79, 28);
+    background-color: RGB(255, 255, 255);
+}
+.weathergrid .currentday {
+    grid-area: today;
+    text-align: center;
+    margin: 2px;
+}
+.weathergrid .currentday img{
+    margin-bottom: -10px;
+    width: 20vw;
+    height: auto;
+}
+.weathergrid .next4 {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+.weathergrid .next4 .eachday {
+    display: flex;
+    flex-direction: column;
+    margin: 2px;
+}
+.weathergrid .next4 .weatherinfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.weathergrid .next4 img {
+    grid-area: forecast;
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    height: 40%;
+}
+#convertbutton {
+    text-align: center;
+}
+#forecastheader {
+    text-align: center;
+    color: RGB(71, 79, 28);
+}
+.survey {
+    color: RGB(209, 180, 140);
+    background-color: RGB(71, 79, 28);
+    text-align: center;
+    border: groove 2px brown;
+    border-radius: 20px;
+    padding-bottom: 10px;
+}
+#selecttext {
+    color: RGB(71, 79, 28);
+}
+.surv {
+    background: RGB(209, 180, 140);
+    color: RGB(71, 79, 28);
+    font-weight:bold
+}
+.surveyheader {
+    text-align: center;
+    font-family: 'Segoe Script';
+    font-weight: bold;
+}
+.thanks {
+    padding-top: 10px;
+}
+.result {
+    text-align: center;
+}
+#ParkCount {
+    font-size: 20px;
+    font-weight:  bold;
+}
+#survQuote {
+    font-size: 20px;
+    vertical-align: middle;
+}
+#survSource {
+    font-size: 15px;
+}

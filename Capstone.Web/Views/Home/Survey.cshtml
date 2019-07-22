@@ -1,0 +1,29 @@
+﻿@* Displays survey results.  Parks are ranked in highest amounts of votes.
+    If user has not voted in survey, form box will appear under nav bar.*@
+@model SurveyViewModel
+
+@section Title {
+    Survey
+}
+
+<partial name="_NavBar" />
+<partial name="_Survey" />
+
+    @foreach (Survey survey in Model.Surveys)
+    {
+        <div class="grid">
+            <div class="picture">
+                <a asp-controller="Home" asp-action="Detail" asp-route-id="@survey.ParkCode"><img src="~/img/parks/@survey.ParkImg" /></a>
+            </div>
+            <div class="info result">
+                <div id="ParkName">@survey.ParkName</div>
+                <div id="ParkCount">Number of votes: @survey.ParkCount</div>
+                <br />
+                <br />
+                <div id="survQuote" class="quote">"@survey.ParkQuote"</div>
+                <div id="survSource">-@survey.QuoteSource</div>
+            </div>
+        </div>
+
+    }
+
